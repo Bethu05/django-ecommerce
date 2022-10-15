@@ -9,6 +9,7 @@ staticfiles
 .idea
 .env
 sketch.md
+build.sh
 *~
 \#*\#
 .\#*
