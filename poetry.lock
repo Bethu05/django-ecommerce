@@ -30,11 +30,11 @@ Django = ">3.2"
 
 [[package]]
 name = "django"
-version = "4.1.2"
+version = "3.2.16"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.7"
 
 [package.dependencies]
 asgiref = ">=3.5.2,<4"
