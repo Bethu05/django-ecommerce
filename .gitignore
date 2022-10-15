@@ -10,6 +10,7 @@ staticfiles
 .env
 sketch.md
 build.sh
+render.yarn
 *~
 \#*\#
 .\#*
