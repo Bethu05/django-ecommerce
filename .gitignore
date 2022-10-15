@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+db.sqlite3
+node_modules
+media
+staticfiles
+.idea
+.env
+sketch.md
+*~
+\#*\#
+.\#*

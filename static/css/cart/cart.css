@@ -1,0 +1,104 @@
+/* ? Side Form */
+.cart-detail{
+  width: 70%;
+  border: 1px solid green;
+}
+.cart-detail .cart-heading{
+  display: flex;
+  justify-content: center;
+}
+.cart-heading .heading{
+  color: var(--grey);
+  font-size: var(--linkSize2);
+  padding: 5px 0px;
+}
+.cart-table{
+  display: flex;
+  justify-content: center;
+}
+.cart-other{
+  display: flex;
+}
+
+
+table.cart {
+  /* font-family: "Comic Sans MS", cursive, sans-serif; */
+  border: 2px solid #FF7F00;
+  background-color: #EEEEEE;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.cart td, table.cart th {
+  border: 1px solid #E1AD01;
+  padding: 3px 2px;
+}
+table.cart tbody th.four,table.cart tbody td.four{
+  width: 10%;
+}
+table.cart tbody td {
+  font-size: 13px;
+  color: #241B00;
+}
+table.cart tbody td#num{
+  font-size: 15px;
+  font-weight: bold;
+
+}
+table.cart tr:nth-child(even) {
+  background: #E1DBB4;
+}
+table.cart thead {
+  background: #FF7F00;
+  background: -moz-linear-gradient(top, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  background: -webkit-linear-gradient(top, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  background: linear-gradient(to bottom, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  border-bottom: 1px solid #444444;
+}
+table.cart thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+table.cart thead th:first-child {
+  border-left: none;
+}
+
+table.cart tfoot {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #FF7F00;
+  background: -moz-linear-gradient(top, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  background: -webkit-linear-gradient(top, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  background: linear-gradient(to bottom, #ff9f40 0%, #ff8b19 66%, #FF7F00 100%);
+  border-top: 1px solid #444444;
+}
+table.cart tfoot td {
+  font-size: 18px;
+}
+table.cart tfoot .links {
+  text-align: right;
+}
+table.cart tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #FF7F00;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.main_cart_image{
+  height: 40px;
+}
+
+
+
+
+.order-form {
+    width: 30%;
+    border: 1px solid #333;
+  }
+  

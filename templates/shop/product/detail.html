@@ -1,0 +1,60 @@
+{% extends 'shop/base.html' %}
+<!-- Load the static -->
+{% load static %}
+<!-- Change the title of the Application -->
+{% block title %} {{ product.name }} {% endblock %}
+<!-- Content Block -->
+{% block content %}
+<div class="product-detail">
+  <!-- Link to The Products -->
+  <div class="product-category">
+    <span> {{ product.name }} </span>
+  </div>
+  <div class="product-imgs">
+    {% comment %}
+    <div class="other-imgs">
+      <div>
+        <img
+          src="{% if product.image %}{{ product.image.url }}{% else %} {% static 'img/no_image.png' %}{% endif %}"
+        />
+      </div>
+      <div>
+        <img
+          src="{% if product.image %}{{ product.image.url }}{% else %} {% static 'img/no_image.png' %}{% endif %}"
+        />
+      </div>
+      <div>
+        <img
+          src="{% if product.image %}{{ product.image.url }}{% else %} {% static 'img/no_image.png' %}{% endif %}"
+        />
+      </div>
+      <div>
+        <img
+          src="{% if product.image %}{{ product.image.url }}{% else %} {% static 'img/no_image.png' %}{% endif %}"
+        />
+      </div>
+    </div>
+    {% endcomment %}
+    <div class="main-img">
+      <img
+        src="{% if product.image %}{{ product.image.url }}{% else %} {% static 'img/no_image.png' %}{% endif %}"
+      />
+    </div>
+    <div class="order-specif">
+      <div class="pricing">
+        <span class="current_price">${{ product.price }}</span>
+        <span class="save_price">Save $50</span>
+        <span class="prev_price">Was : $699.99</span>
+      </div>
+      <div class="amount-submit">
+        <form action="{% url 'cart:cart_add' product.id %}" method="POST">
+          {{ cart_product_form }} {% csrf_token %}
+          <input type="submit" value="Add to Cart" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="product-desc">{{ product.description|linebreaks }}</div>
+</div>
+<div class="order-form">Order Form Here</div>
+{% endblock %}

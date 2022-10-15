@@ -1,0 +1,67 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock title %}
+{% block content %}
+<div class="cart-detail">
+  <div class="cart-heading">
+    <span class="heading">Your shopping cart</span>
+  </div>
+  <div class="cart-table">
+    <table class="cart">
+      <thead>
+          <tr>
+              <th class="four">#</th>
+              <th>Image</th>
+              <th>Product</th>
+              <th class="four">Quantity</th>
+              <th class="four">Remove</th>
+              <th class="four">Unit price</th>
+              <th class="four">Price</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for item in cart %}
+            {% with product=item.product %}
+              <tr>
+                  <td class="four">1</td>
+                  <td>
+                      <a href="{{ product.get_absolute_url }}">
+                          <img class="main_cart_image" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">
+                      </a>
+                  </td>
+                  <td>{{ product.name }}</td>
+                  <td class="four">{{ item.quantity }}</td>
+                  <td class="four">
+                      <form action="{% url 'cart:cart_remove' product.id %}" method="POST">
+                          <input type="submit" value="Remove">
+                          {% csrf_token %}
+                      </form>
+                  </td>
+                  <td class="four" id="num">${{ item.price }}</td>
+                  <td class="four" id="num">${{ item.total_price }}</td>
+              </tr>
+            {% endwith %}
+          {% endfor %}
+          <tfoot>
+            <tr class="total">
+              <td>Total</td>
+              <td colspan="5"></td>
+              <td class="num">${{ cart.get_total_price }}</td>
+          </tr>
+          </tfoot>
+      </tbody>
+    </table>
+  </div>
+  <div class="cart-other">
+    <p class="text-right">
+      <a href="{% url 'frontend:product_list' %}" class="button light">Continue shopping</a>
+      <a href="#" class="button">Checkout</a>
+    </p>
+  </div>
+</div>
+<div class="cart-suggestions">
+  Cart Suggestions
+</div>  
+{% endblock content %}

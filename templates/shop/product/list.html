@@ -1,0 +1,35 @@
+<!-- Extend the base html -->
+{% extends 'shop/base.html' %}
+<!-- import static files -->
+{% load static %}
+<!-- to manage the changing of the title -->
+{% block title %}
+{% if category %}{{ category.name }} {% else %} Products {% endif %}
+{% endblock title %}
+<!-- Where The other content goes -->
+{% block content %}
+<div id="main" class="product-list">
+    <div class="product-category">
+        <span class="category-title">{% if category %}{{ category.name }}{% else %}Products{% endif %}</span>
+    </div>
+    <div class="products">
+        {% for product in products %}
+        <div class="item">
+            <a href="{{ product.get_absolute_url }}">
+                <img src="{% if product.image %}{{ product.image.url }}
+                {% else %}{% static 'img/no_image.png' %}{% endif %}">
+            </a> 
+            <div class="desc">
+                <a href="{{ product.get_absolute_url }}">{{ product.name|truncatewords:8 }}</a>
+                <br>
+                <span class="discount">50% off</span>
+                <span class="previous-price">$100.11</span><br>
+                <span class="price"><span>Now </span>${{ product.price }}</span>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock content %}
