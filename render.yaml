@@ -1,7 +1,7 @@
 databases:
-  -name: ecommerce
-   databaseName: ecommerce
-   user: ecommerce
+  - name: ecommerce
+    databaseName: ecommerce
+    user: ecommerce
 
 services:
   -type: web
