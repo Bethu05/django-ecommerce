@@ -1,7 +1,7 @@
 from django.db import models
 # import the reverse() function to add a get_absolute_url()
 from django.urls import reverse
-
+frontend
 class Category(models.Model):
     name = models.CharField(max_length=200,db_index=True)
     slug = models.SlugField(max_length=200, unique=True)
